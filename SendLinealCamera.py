@@ -41,11 +41,12 @@ while True:
     if not radio.available([1]):
         #pass
         time.sleep(500000/1000000.0)
-    print("recieved")
     buf = []
     radio.read(buf, 32)
-    print(buf)
+    
     if buf[0] == CrRadioCommand.StartImage.value:
+        print("recieved: ", end = "")
+        print(buf)
         break
 
 
